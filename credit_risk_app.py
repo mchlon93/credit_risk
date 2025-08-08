@@ -21,7 +21,6 @@ warnings.filterwarnings('ignore')
 # Set page config
 st.set_page_config(
     page_title="Credit Risk Modeling",
-    page_icon="💳",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -56,9 +55,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# =============================================================================
-# DATA CLEANING PIPELINE
-# =============================================================================
+############# DATA CLEANING PIPELINE #############
 
 class DataCleaningPipeline:
     def __init__(self):
@@ -504,7 +501,7 @@ def plot_logistic_coefficients(model, feature_names):
 ############# STREAMLIT APP #############
 
 def main():
-    st.markdown('<h1 class="main-header">💳 Credit Risk Modeling</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Credit Risk Modeling</h1>', unsafe_allow_html=True)
     
     # Sidebar navigation
     st.sidebar.title("Navigation")
