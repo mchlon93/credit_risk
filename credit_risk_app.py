@@ -25,32 +25,63 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS  
 st.markdown("""
 <style>
     .main-header {
         font-size: 3rem;
-        color: #1f77b4;
+        color: #016FD0;
         text-align: center;
         margin-bottom: 2rem;
     }
     .section-header {
-        font-size: 2rem;
-        color: #ff7f0e;
+        font-size: 2.5rem;
+        color: #013968;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        font-weight: 600;
     }
     .subsection-header {
         font-size: 1.5rem;
-        color: #2ca02c;
+        color:#36454F;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
     }
     .metric-card {
-        background-color: #f0f2f6;
+        background-color: white;
         padding: 1rem;
         border-radius: 0.5rem;
         margin: 0.5rem 0;
+        border: 2px solid #016FD0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    
+    .stButton > button[kind="primary"] {
+        background-color: #016FD0 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        font-weight: 500 !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .stButton > button[kind="primary"]:hover {
+        background-color: #014a94 !important;
+        box-shadow: 0 4px 8px rgba(1, 111, 208, 0.3) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    .stButton > button[kind="primary"]:active {
+        background-color: #013968 !important;
+        transform: translateY(0px) !important;
+    }
+    
+    .stButton > button[kind="primary"]:focus:not(:active) {
+        border: 2px solid #016FD0 !important;
+        box-shadow: 0 0 0 0.2rem rgba(1, 111, 208, 0.25) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -522,7 +553,6 @@ def main():
         df = pd.read_csv('credit_risk_dataset.csv')
         st.session_state.original_data = df
         st.session_state.data_loaded = True
-        st.sidebar.success(f"Data loaded successfully! Shape: {df.shape}")
     except FileNotFoundError:
         st.sidebar.error("credit_risk_dataset.csv not found. Please ensure the file is in the same directory as this script.")
         st.session_state.data_loaded = False
